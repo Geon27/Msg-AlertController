@@ -13,8 +13,11 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "선택", message: "항목을 선택해주세요", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel) // 취소버튼
         
+        let ok = UIAlertAction(title: "확인", style: .default) // 확인버튼
+        
         // 버튼을 컨트롤러에 등록
         alert.addAction(cancel)
+        alert.addAction(ok)
         
         // 메시지 창 실행
         self.present(alert, animated: false)
