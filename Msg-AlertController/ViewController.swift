@@ -11,10 +11,22 @@ class ViewController: UIViewController {
     @IBAction func alert(_ sender: Any) {
         // 메시지창 객체 생성
         let alert = UIAlertController(title: "선택", message: "항목을 선택해주세요", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "취소", style: .cancel) // 취소버튼
-        let ok = UIAlertAction(title: "확인", style: .default) // 확인버튼
-        let exec = UIAlertAction(title: "실행", style: .destructive) // 실행버튼
-        let stop = UIAlertAction(title: "중지", style: .default) // 중지버튼
+        let cancel = UIAlertAction(title: "취소", style: .cancel) {
+            (_) in
+            self.result.text = "취소버튼을 클릭했습니다."
+        }
+        let ok = UIAlertAction(title: "확인", style: .default)  {
+            (_) in
+            self.result.text = "확인버튼을 클릭했습니다."
+        }
+        let exec = UIAlertAction(title: "실행", style: .destructive)  {
+            (_) in
+            self.result.text = "실행버튼을 클릭했습니다."
+        }
+        let stop = UIAlertAction(title: "중지", style: .default)  {
+            (_) in
+            self.result.text = "중지버튼을 클릭했습니다."
+        }
         
         // 버튼을 컨트롤러에 등록
         alert.addAction(cancel)
