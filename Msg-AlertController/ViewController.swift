@@ -37,4 +37,19 @@ class ViewController: UIViewController {
         // 메시지 창 실행
         self.present(alert, animated: false)
     }
+    @IBAction func login(_ sender: Any) {
+        let title = "iTunes Store에 로그인"
+        let message = "사용자의 Apple ID sqlpro@naver.com의 암호를 입력하십시오"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let ok = UIAlertAction(title: "확인", style: .default) {
+            (_) in
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        
+        self.present(alert, animated: false)
+    }
 }
