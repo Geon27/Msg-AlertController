@@ -50,6 +50,13 @@ class ViewController: UIViewController {
         alert.addAction(cancel)
         alert.addAction(ok)
         
+        // 텍스트 필드 추가
+        alert.addTextField(configurationHandler: { (tf) in
+            //텍스트 필드의 속성 설정
+            tf.placeholder = "암호" // 안내 메시지
+            tf.isSecureTextEntry = true // 비밀번호 처리
+        })
+        
         self.present(alert, animated: false)
     }
 }
