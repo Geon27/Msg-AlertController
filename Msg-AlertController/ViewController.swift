@@ -43,8 +43,13 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel)
-        let ok = UIAlertAction(title: "확인", style: .default) {
-            (_) in
+        let ok = UIAlertAction(title: "확인", style: .default) { (_) in
+        // 확인버튼을 클릭했을때 처리할 내용
+            if let tf = alert.textFields?[0] {
+                print("입력된 값은 \( tf.text! )입니다.")
+            }else{
+                print("입력된 값이 없습니다.")
+            }
         }
         
         alert.addAction(cancel)
