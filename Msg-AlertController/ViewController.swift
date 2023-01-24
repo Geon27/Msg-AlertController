@@ -77,5 +77,19 @@ class ViewController: UIViewController {
         //정의된 액션 버튼 객체를 메시지창에 추가
         alert.addAction(cancel)
         alert.addAction(ok)
+        
+        // 아이디 필드 추가
+        alert.addTextField(configurationHandler: {(tf) in
+            tf.placeholder = "아이디"
+            tf.isSecureTextEntry = false
+        })
+        
+        // 비밀번호 필드 추가
+        alert.addTextField(configurationHandler: { (tf) in
+            tf.placeholder = "비밀번호"
+            tf.isSecureTextEntry = true
+        })
+        
+        self.present(alert, animated: false)
     }
 }
